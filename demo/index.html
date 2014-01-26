@@ -10,6 +10,7 @@
 		<h1>OpenDevelop JavaScript Client</h1>
 		
 		<section id="client-settings">
+			<h2>Client settings</h2>
 			<form id="client-settings-form">
 				<div>
 					<label for="opendevelop-host" >OpenDevelop Host</label>
@@ -25,6 +26,22 @@
 				</div>
 				<button>Save settings</button>
 			</form>
+		</section>
+
+		<section id="client-method-section">
+			<h2>What would you like to do ?</h2>
+			<div>
+				<form>
+					<select id="client-method" >
+						<option data-apicall="GET api/images" value="images">List available images</option>
+						<option data-apicall="POST api/sandbox" value="createSandbox">Create a sandbox</option>
+						<option data-apicall="GET api/sandbox/:sandbox_slug" value="sandbox">Inspect sandbox</option>
+					</select>
+					<button>Send method</button>
+				</form>
+			</div>
+			<pre id="api-call"></pre>
+			<pre id="api-call-response"></pre>
 		</section>
 		<script src="main.js"></script>
 	</body>

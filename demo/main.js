@@ -24,3 +24,12 @@ settingsForm.onsubmit = function (e) {
 		delegate.clientSecret = settingsForm.clientSecret.value;
 	});
 }
+
+var clientMethod = document.getElementById('client-method'),
+	apiCall = document.getElementById('api-call'),
+	apiCallResponse = document.getElementById('api-call-response');
+
+clientMethod.onchange = function () {
+	apiCall.innerHTML = this.selectedOptions[0].dataset['apicall'];
+}
+clientMethod.onchange();
