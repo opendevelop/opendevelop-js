@@ -3,46 +3,51 @@
 	<head>
 		<meta charset="utf=8" />
 		<title>OpenDevelop js</title>
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="main.css" />
 		<script src="../lib/opendevelop.js"></script>
+		<script src="vendor/jquery.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<h1>OpenDevelop JavaScript Client</h1>
 		
-		<section id="client-settings">
-			<h2>Client settings</h2>
-			<form id="client-settings-form">
-				<div>
-					<label for="opendevelop-host" >OpenDevelop Host</label>
-					<input id="opendevelop-host"  name="opendevelop-host" autofocus="autofocus"/>
-				</div>
-				<div>
-					<label for="opendevelop-client-id" >OpenDevelop Client Id</label>
-					<input id="opendevelop-client-id" name="opendevelop-client-id" />
-				</div>
-				<div>
-					<label for="opendevelop-client-secret" >OpenDevelop Client Secret</label>
-					<input id="opendevelop-client-secret" name="opendevelop-client-secret" />
-				</div>
-				<button>Save settings</button>
-			</form>
-		</section>
-
-		<section id="client-method-section">
-			<h2>What would you like to do ?</h2>
-			<div>
-				<form>
-					<select id="client-method" >
-						<option data-apicall="GET api/images" value="images">List available images</option>
-						<option data-apicall="POST api/sandbox" value="createSandbox">Create a sandbox</option>
-						<option data-apicall="GET api/sandbox/:sandbox_slug" value="sandbox">Inspect sandbox</option>
-					</select>
-					<button>Send method</button>
+		<div class="container">
+			<section id="client-settings">
+				<h2>Client settings</h2>
+				<form id="client-settings-form">
+					<div>
+						<label for="opendevelop-host" >OpenDevelop Host</label>
+						<input id="opendevelop-host"  name="opendevelop-host" autofocus="autofocus"/>
+					</div>
+					<div>
+						<label for="opendevelop-client-id" >OpenDevelop Client Id</label>
+						<input id="opendevelop-client-id" name="opendevelop-client-id" />
+					</div>
+					<div>
+						<label for="opendevelop-client-secret" >OpenDevelop Client Secret</label>
+						<input id="opendevelop-client-secret" name="opendevelop-client-secret" />
+					</div>
+					<button>Save settings</button>
 				</form>
-			</div>
-			<pre id="api-call"></pre>
-			<pre id="api-call-response"></pre>
-		</section>
+			</section>
+
+			<section id="client-method-section">
+				<h2>What would you like to do ?</h2>
+				<div>
+					<form>
+						<select id="client-method" >
+							<option data-apicall="GET api/images" value="images">List available images</option>
+							<option data-apicall="POST api/sandbox" value="createSandbox">Create a sandbox</option>
+							<option data-apicall="GET api/sandbox/:sandbox_slug" value="sandbox">Inspect sandbox</option>
+						</select>
+						<button>Send method</button>
+					</form>
+				</div>
+				<pre id="api-call"></pre>
+				<pre id="api-call-response"></pre>
+			</section>
+		</div>
 		<script src="main.js"></script>
 	</body>
 </html>
