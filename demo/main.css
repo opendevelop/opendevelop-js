@@ -15,3 +15,16 @@ h1 {
 #client-settings-form button {
 	margin-top: 16px;
 }
+
+.method-containers > div {
+	display: none;
+}
+
+#client-method-section.createSandbox .method-containers > .createSandbox {
+	display: block;
+}
+
+#dropbox {
+	padding: 32px;
+	margin: 8px 0;
+}

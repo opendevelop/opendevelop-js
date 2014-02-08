@@ -26,10 +26,34 @@ settingsForm.onsubmit = function (e) {
 }
 
 var clientMethod = document.getElementById('client-method'),
+	clientMethodSection = document.getElementById('client-method-section'),
 	apiCall = document.getElementById('api-call'),
 	apiCallResponse = document.getElementById('api-call-response');
 
 clientMethod.onchange = function () {
 	apiCall.innerHTML = this.selectedOptions[0].dataset['apicall'];
+	clientMethodSection.setMethod();
 }
+
+clientMethod.getCurrentMethod = function () {
+	return this.selectedOptions[0].value;
+}
+
+clientMethodSection.setMethod = function () {
+	var currentMethod = this.dataset['clientMethod'];
+	this.classList.remove(currentMethod);
+	this.classList.add(clientMethod.getCurrentMethod());
+	this.dataset['clientMethod'] = clientMethod.getCurrentMethod();
+}
+
 clientMethod.onchange();
+
+var dropbox = document.getElementById('dropbox');
+dropbox.ondragstart = function (e) {
+	e.preventDefault();
+	e.stopPropagation();
+	dropbox.textContent = 'lol';
+}
+dropbox.ondragenter = function () {
+	dropbox.textContent = 'lol';
+}

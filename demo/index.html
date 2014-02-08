@@ -18,34 +18,53 @@
 				<form id="client-settings-form">
 					<div>
 						<label for="opendevelop-host" >OpenDevelop Host</label>
-						<input id="opendevelop-host"  name="opendevelop-host" autofocus="autofocus"/>
+						<input id="opendevelop-host" class="form-control" name="opendevelop-host" autofocus="autofocus"/>
 					</div>
 					<div>
 						<label for="opendevelop-client-id" >OpenDevelop Client Id</label>
-						<input id="opendevelop-client-id" name="opendevelop-client-id" />
+						<input id="opendevelop-client-id" class="form-control" name="opendevelop-client-id" />
 					</div>
 					<div>
 						<label for="opendevelop-client-secret" >OpenDevelop Client Secret</label>
-						<input id="opendevelop-client-secret" name="opendevelop-client-secret" />
+						<input id="opendevelop-client-secret" class="form-control" name="opendevelop-client-secret" />
 					</div>
-					<button>Save settings</button>
+					<button class="btn btn-default" >Save settings</button>
 				</form>
 			</section>
 
 			<section id="client-method-section">
 				<h2>What would you like to do ?</h2>
-				<div>
-					<form>
-						<select id="client-method" >
-							<option data-apicall="GET api/images" value="images">List available images</option>
-							<option data-apicall="POST api/sandbox" value="createSandbox">Create a sandbox</option>
-							<option data-apicall="GET api/sandbox/:sandbox_slug" value="sandbox">Inspect sandbox</option>
-						</select>
-						<button>Send method</button>
-					</form>
+				<div class="panel panel-default" >
+					<div class="panel-body">
+						<form role="form" >
+							<div class="form-group">
+								<select id="client-method" >
+									<option data-apicall="GET api/images" value="images">List available images</option>
+									<option data-apicall="POST api/sandbox" value="createSandbox">Create a sandbox</option>
+									<option data-apicall="GET api/sandbox/:sandbox_slug" value="sandbox">Inspect sandbox</option>
+								</select>
+							</div>
+							<pre id="api-call"></pre>
+							<div class="method-containers" >
+								<div class="createSandbox">
+									<div class="panel panel-default bg-info">
+										<div id="dropbox" class="panel-body">Drag n drop your files here</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<button class="btn btn-primary" >Send method</button>
+							</div>
+						</form>
+					</div>
 				</div>
-				<pre id="api-call"></pre>
-				<pre id="api-call-response"></pre>
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Response</h3>
+						<pre id="api-call-response"></pre>
+					</div>
+				</div>
 			</section>
 		</div>
 		<script src="main.js"></script>
